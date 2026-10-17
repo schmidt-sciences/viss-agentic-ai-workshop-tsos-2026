@@ -1,3 +1,9 @@
+## 2026-10-17
+* **Update**: Updated concept `facts/stale-event-references.md`.
+* **Update**: Updated concept `facts/workshop-roles.md`.
+* **Update**: Updated concept `decisions/delivery-on-jupyterhub.md`.
+* **Update**: Updated concept `facts/stale-event-references.md`.
+
 ## 2026-10-15
 * **Update**: Updated concept `decisions/block3-fits-to-zarr-example.md`.
 * **Update**: Updated concept `requirements/block3-data.md`.
