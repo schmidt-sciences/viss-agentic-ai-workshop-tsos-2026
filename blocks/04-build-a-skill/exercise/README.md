@@ -33,16 +33,16 @@ whichever gets you to "running" fastest:
 
 **Your own work** — a snippet of code, a notebook, a CSV from your lab, a transcript. This is the most useful target if you brought something. The pattern is identical regardless of domain (physical science, ML, behavioral / social science, bio, stats, qualitative work).
 
-No code of your own? Use `sci_units` or the Block 3 dataset, or drop a
+No code of your own? Use `sci_units` or the Block 3 FITS cube, or drop a
 notebook or CSV from your lab into a scratch folder. The point is the
 *pattern*, not the example.
 
 ## 3. Pick a job (1 min)
 
 What does your agent do? See [`ideas.md`](ideas.md) for 30+ starting ideas
-across categories: code review, code generation, refactoring, HCI /
-experiment analysis, general research, behavioral / social science / stats,
-experiment management, onboarding.
+across categories: code review, code generation, refactoring, general
+research, behavioral / social science / stats, experiment management,
+onboarding.
 
 Or invent your own. The good first ones are **narrow** ("review against
 one specific guideline", "explain one specific kind of error") rather than
@@ -80,7 +80,6 @@ Run the agent and watch what it actually does, noting anything it got wrong.
 Example queries depending on what you built:
 - For a reviewer: *"@agent-my-agent review `blocks/01-landscape/demo/starter/src/sci_units/converters.py`."*
 - For a docstring writer: *"Add docstrings to `blocks/01-landscape/demo/starter/src/sci_units/converters.py`."*
-- For an assumption checker: *"Check the normality assumption on `blocks/03-research-loop/demo-hci/starter/data.csv`."*
 - For an error explainer: *"Explain this traceback: <paste>."*
 
 ## 6. Iterate (back to step 4)
@@ -94,7 +93,7 @@ Did your agent do what you expected? If not, match what you saw to a fix:
 
 Change one thing at a time, then re-run. Two or three passes is normal;
 stop when it's good enough to be useful. This is the same prompt
-engineering behind the Block 3 research-loop skills in `.claude/skills/`.
+engineering behind the Block 3 skills in `.github/skills/`.
 
 ## 7. Stretch: take it further
 
@@ -109,7 +108,7 @@ from an agent: it can bundle scripts and resources and load on demand.
 The fields are slightly different (YAML frontmatter with `name` and
 `description`; markdown body) but the *shape* is identical to a
 subagent: persona + steps + tools + output format. See the worked
-Block 3 research-loop skills in [`.claude/skills/`](../../../.claude/skills/).
+Block 3 skills in [`.github/skills/`](../../../.github/skills/).
 
 1. Make `.claude/skills/<your-skill-name>/` at the repo root.
 2. Copy the skeleton into it and fill in the TODOs (or paste the body from your agent):
@@ -144,7 +143,7 @@ cp blocks/04-build-a-skill/exercise/my-command.md.template \
 3. Invoke it with `/review-and-fix path/to/code.py`. Whatever you type after
    the command name replaces `$ARGUMENTS`.
 
-Slash commands are the one-shot cousin of the Block 3 research-loop skills:
+Slash commands are the one-shot cousin of skills like Block 3's `fits-to-zarr`:
 where a skill is a multi-step capability the agent auto-selects, a command
 is a templated `/slash` prompt you fire deliberately.
 

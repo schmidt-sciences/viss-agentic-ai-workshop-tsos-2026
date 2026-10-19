@@ -25,8 +25,6 @@ By the end of this block, an attendee can:
     notebook.ipynb     # the guided walkthrough: prompts, checks, moment 0, sky view
     starter/README.md  # where the FITS data lives (it is not in git)
     expected-artifacts/  # pre-generated docs/ outputs + figures, as fallback
-  demo-hci/            # the previous statistical-analysis demo (text-entry study),
-                       # kept as a Block 4 target and for the stats skills
 ```
 
 The FITS data (26 files, ~100 MB) is **not in git**. On the JupyterHub it is

@@ -41,10 +41,11 @@ Three primitives, same idea (a markdown file = instructions + tools), different 
 | **Input** | `$ARGUMENTS` after the command | Natural-language context (+ `argument-hint`) | The task Claude hands it |
 | **Best for** | One-shot repeatable task | A multi-step capability (can bundle scripts) | A focused persona with a fixed tool list and its own context |
 | **Lifespan** | One turn | One task | One delegated task (or the whole session with `claude --agent`) |
-| **Example here** | `eda-summary`, `scaffold-package` | the 6 research-loop skills | `docstring-writer`, `research-data-scientist` |
+| **Example here** | `eda-summary`, `scaffold-package` | `profile-dataset`, `fits-to-zarr`, `handoff` | `docstring-writer`, `scientific-python-reviewer` |
 
-> They **compose**: `research-data-scientist` (an *agent*) drives the seven *skills* in
-> order. Pick the smallest primitive that does the job — most of the time that's a
+> They **compose**: a *command* can chain *agents* (`/review-and-fix` runs
+> `scientific-python-reviewer`, then `docstring-writer`), and a *skill* can bundle
+> scripts (`fits-to-zarr` runs `convert.py`, then `verify.py`). Pick the smallest primitive that does the job — most of the time that's a
 > command or a skill, not a whole agent.
 
 > The fourth primitive, **rules** (`.claude/rules/*.md`), is never invoked: Claude
@@ -59,7 +60,7 @@ Three primitives, same idea (a markdown file = instructions + tools), different 
     cp blocks/04-build-a-skill/exercise/my-agent.md.template \
        .claude/agents/my-agent.md
     ```
-2. **Pick** a target, the `sci_units` package, the Block 3 FITS cube, the text-entry dataset in `blocks/03-research-loop/demo-hci/`, or your own code.
+2. **Pick** a target, the `sci_units` package, the Block 3 FITS cube, or your own code.
 3. **Pick** a job, see `exercise/ideas.md`, or invent your own.
 4. **Edit** the file: name, description, tools, system prompt, constraints.
 5. **Run** `claude` in a JupyterHub terminal at the repo root (new agents are picked up live).

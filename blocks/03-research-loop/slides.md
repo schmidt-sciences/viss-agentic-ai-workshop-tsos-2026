@@ -36,7 +36,6 @@ Claude Code **skills**, shipped in-repo as `.github/skills/<name>/SKILL.md` (lin
 |---|---|---|---|
 | Profile | `profile-dataset` | `docs/profile-<slug>.md` | Understand the data as-is |
 | Convert + verify | `fits-to-zarr` | `docs/convert-<slug>.md`, `docs/verify-<slug>.md` | FITS images → one Zarr cube, checked against the FITS |
-| Plan / explore / test / draft / validate | `plan-analysis`, `explore-data`, `statistical-tests`, `draft-report`, `validate-analysis` | `docs/...` | A statistical-analysis loop (see `demo-hci/`) |
 | (any time) | `handoff` | `docs/handoff-<ts>.md` | Transfer session context |
 
 --

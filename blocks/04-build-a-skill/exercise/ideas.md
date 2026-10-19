@@ -32,16 +32,6 @@ description. Pick one and remix it into a subagent (`.claude/agents/`).
 | `extract-function` | `Read`, `Edit` | Pull a code block into a named function with appropriate args | any long function / your own code |
 | `path-modernizer` | `Read`, `Edit` | Replace `os.path` calls with `pathlib` equivalents | any older code |
 
-## Domain-specific (HCI / experiment analysis)
-
-Targets the Block 3 text-entry dataset (`blocks/03-research-loop/demo-hci/starter/data.csv`) or your own experiment data.
-
-| Skill | Tools | What it does | Good target |
-|---|---|---|---|
-| `design-detector` | `Read`, `Grep`, `Glob` | Read a dataset + its codebook and state whether it's within- or between-subjects, and which test family fits | `data.csv` + `AGENTS.md` |
-| `assumption-checker` | `Read`, `Bash` | Run normality / variance checks on an outcome and report whether a parametric test is justified | `data.csv` (`wpm`) |
-| `wrong-test-spotter` | `Read`, `Grep`, `Glob` | Read an analysis script and flag an independent-samples test used on repeated-measures data | any analysis `.py` / `.ipynb` |
-
 ## General research
 
 | Skill | Tools | What it does | Good target |

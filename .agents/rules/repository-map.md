@@ -32,10 +32,10 @@ be in the hub image. Repo tooling (agent rules, pre-commit, CI) was adopted from
 ├── blocks/                      # The four workshop blocks (layout is load-bearing; don't restructure)
 │   ├── 01-landscape/            # Slides + agent-loop notebook; demo/starter/ is the sci_units package
 │   ├── 02-how-it-works/         # Slides + model-swap notebook
-│   ├── 03-research-loop/        # Slides + FITS-to-Zarr agent notebook (demo/) and the older HCI stats demo (demo-hci/)
+│   ├── 03-research-loop/        # Slides + FITS-to-Zarr agent notebook (demo/)
 │   ├── 04-build-a-skill/        # Slides + capstone exercise templates
 │   └── _shared/slides.css       # Marp theme (registered in .vscode/settings.json)
-├── docs/                        # Workshop outline, pre-block checklists, audience Q&A, stats reference
+├── docs/                        # Workshop outline, pre-block checklists, audience Q&A
 ├── workshop_agent/              # Agent loop + tools extracted from Block 1's notebook (keep in sync)
 ├── .devcontainer/               # Fallback if the hub is down: uv env, Jupyter kernel, LiteLLM gateway secrets
 ├── .github/

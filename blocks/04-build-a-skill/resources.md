@@ -6,7 +6,7 @@ else is "going further."
 ## The primitives we used
 
 - **Claude Code: [Subagents](https://code.claude.com/docs/en/sub-agents)**: the official docs for the file format we just used (`.claude/agents/*.md`): frontmatter fields, tool names, and how to invoke one. Bookmark this.
-- **Claude Code: [Skills](https://code.claude.com/docs/en/skills)**: a folder (`.claude/skills/<name>/SKILL.md`) that bundles instructions, and optionally scripts and resources, for a multi-step capability, loaded on demand. The same page covers slash commands (`.claude/commands/*.md`), the simpler one-shot primitive, and `$ARGUMENTS`. See the Block 3 research-loop skills in `.claude/skills/` and the worked commands in `.claude/commands/`.
+- **Claude Code: [Skills](https://code.claude.com/docs/en/skills)**: a folder (`.claude/skills/<name>/SKILL.md`) that bundles instructions, and optionally scripts and resources, for a multi-step capability, loaded on demand. The same page covers slash commands (`.claude/commands/*.md`), the simpler one-shot primitive, and `$ARGUMENTS`. See the Block 3 skills (`profile-dataset`, `fits-to-zarr`, `handoff`) in `.github/skills/` and the worked commands in `.claude/commands/`.
 - **Claude Code: [Memory](https://code.claude.com/docs/en/memory)**: `CLAUDE.md` / `AGENTS.md` for project-wide conventions, and `.claude/rules/*.md` with a `paths` glob for path-scoped rules. See `.claude/rules/` for worked examples.
 
 ## Going further with Claude Code
