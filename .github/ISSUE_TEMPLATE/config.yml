@@ -1,4 +1,8 @@
 blank_issues_enabled: false
+contact_links:
+  - name: 💬 General question / discussion
+    url: https://github.com/uw-ssec/viss-observatory-workshop-2026/discussions
+    about: Please ask questions in Discussions instead of opening an issue.
 issue_templates:
   - name: Bug report
     id: bug_report
