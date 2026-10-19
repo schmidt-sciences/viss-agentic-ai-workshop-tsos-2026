@@ -7,11 +7,11 @@ argument-hint: '[dataset path] (defaults to the open file)'
 # Profile dataset (phase 1 of the analysis workflow)
 
 Build context for an analysis by **documenting the data as it exists today**. This
-is the first phase of the durable profile → plan → explore → test → draft →
-validate loop.
+is the first phase of the workflow; for FITS images, the next phase is
+`fits-to-zarr`.
 
-The dataset to profile: the CSV/TSV/parquet the user points you at (or the open
-file). Read `AGENTS.md` first if one is present — it carries the study design and
+The dataset to profile: the CSV/TSV/parquet file or folder of FITS images the
+user points you at (or the open file). Read `AGENTS.md` first if one is present — it carries the study design and
 conventions.
 
 ## Artifacts directory
@@ -46,7 +46,7 @@ Your only job is to **document and describe** the dataset and its study design.
    grouping keys, the stated outcome(s), missingness, suspicious sentinels.
 5. **Write the artifact** to `docs/profile-<slug>.md` (create `docs/` if
    needed; `<slug>` from the dataset/study, lowercase-hyphenated).
-6. **Present** a short summary in chat and offer to move to `plan-analysis`.
+6. **Present** a short summary in chat and offer the next step (for FITS images, `fits-to-zarr`).
 
 ## Artifact structure (`docs/profile-<slug>.md`)
 
@@ -85,4 +85,4 @@ quote the source; do not infer a test>
 - Keep the artifact self-contained: a reader should understand the dataset from it
   alone.
 
-Next phase: hand this to `plan-analysis` (or, for FITS images, to `fits-to-zarr`).
+Next phase: for FITS images, hand this to `fits-to-zarr`.

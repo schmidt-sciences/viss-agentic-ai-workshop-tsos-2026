@@ -12,8 +12,8 @@ Take a flat research script (or loose folder of scripts) and produce a concrete
 plan to turn it into a small, installable, `uv`-managed package with a `src/`
 layout. This is the **project setup** phase of the research lifecycle.
 
-Target: `$ARGUMENTS` (e.g. `blocks/03-research-loop/demo-hci/starter/`). If that
-is blank, don't assume: ask the user which script or folder to package first.
+Target: `$ARGUMENTS` (e.g. `analysis.py` or `scripts/`). If that is blank, don't
+assume: ask the user which script or folder to package first.
 
 ## Steps
 

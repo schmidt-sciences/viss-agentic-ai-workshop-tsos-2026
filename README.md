@@ -26,7 +26,7 @@ blocks/0N-name/
 ## Tools used
 
 - **Claude Code in a JupyterHub terminal**: the coding agent. Your hub login comes with a key for the workshop's AI gateway, so you open a terminal and type `claude`, with no account or setup of your own. The hub's **JupyterAI** chat panel uses the same gateway.
-- **Skills** for Block 3: `fits-to-zarr`, `profile-dataset`, `handoff`, and the statistical research loop (`plan-analysis`, `explore-data`, `statistical-tests`, `draft-report`, `validate-analysis`) ship **in-repo** as [`.github/skills/<name>/SKILL.md`](.github/skills/), linked into `.claude/skills/` so Claude Code loads them. The agent auto-selects a skill from its `description`, or you invoke one by name.
+- **Skills** for Block 3: `fits-to-zarr`, `profile-dataset`, and `handoff` ship **in-repo** as [`.github/skills/<name>/SKILL.md`](.github/skills/), linked into `.claude/skills/` so Claude Code loads them. The agent auto-selects a skill from its `description`, or you invoke one by name.
 - **Claude Models (via the workshop's gateway)**: the model backend, fronting Claude Sonnet 4.6 and Claude Haiku 4.5. Claude Code and the notebooks hit the same gateway. The notebooks use the **`litellm` Python SDK**, so the same agent loop works against any other model the gateway fronts.
 - **Python 3.12 + `uv`**: environment and package management.
 - **Marp**: slides as markdown.
@@ -57,7 +57,6 @@ The [`.claude/`](.claude/) folder is a **worked gallery** of ways to customize a
 | Lifecycle phase           | What it is                                          | Primitive | Location                                                                           |
 | ------------------------- | --------------------------------------------------- | --------- | ---------------------------------------------------------------------------------- |
 | Data conversion (Block 3) | FITS images → verified Zarr cube (`fits-to-zarr`)   | skill     | [`.claude/skills/`](.claude/skills/)                                               |
-| Full analysis loop        | Orchestrate the seven research-loop skills          | agent     | [`research-data-scientist`](.claude/agents/research-data-scientist.md)             |
 | Project setup             | Flat script → installable package (plan)            | command   | [`scaffold-package`](.claude/commands/scaffold-package.md)                         |
 | Data / EDA                | First look at a dataset                             | command   | [`eda-summary`](.claude/commands/eda-summary.md)                                   |
 | Implementation / planning | Read-only thinking partner, then hand off           | agent     | [`research-pair`](.claude/agents/research-pair.md)                                 |
@@ -79,8 +78,8 @@ Open a terminal, `cd` to the repo root, and run `claude`. Then:
   session as that agent: `claude --agent research-pair`.
 - **Commands:** type `/` and pick one (e.g. `/eda-summary`), or pass the
   input: `/write-tests sci_units.converters`.
-- **Skills:** ask in plain language ("profile the text-entry dataset in
-  `blocks/03-research-loop/demo-hci/starter/`") and the matching research-loop skill
+- **Skills:** ask in plain language ("profile the FITS images described in
+  `blocks/03-research-loop/demo/AGENTS.md`") and the matching skill
   (here `profile-dataset`) loads on demand.
 - **Rules:** ask Claude to work on a notebook or a file under `tests/` and they
   apply automatically.

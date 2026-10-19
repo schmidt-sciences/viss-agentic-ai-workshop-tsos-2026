@@ -7,7 +7,7 @@ By the end of this block, an attendee can:
 1. Read a Claude Code subagent file and identify which line corresponds to which **anatomy concept** from Block 1 (LLM backbone, tool use, project memory, system prompt).
 2. **Write** a subagent end-to-end: pick a job, write a focused system prompt, choose a narrow tool list, save it to `.claude/agents/`, and invoke it from Claude Code.
 3. **Iterate** on an agent that almost works: tighten the prompt, add explicit constraints, narrow or broaden the tool list.
-4. Map the same agent pattern to **other primitives** (slash commands for one-shots, like `eda-summary` or `scaffold-package`; skills for multi-step capabilities, like the Block 3 research loop; MCP servers if they want to add new tools).
+4. Map the same agent pattern to **other primitives** (slash commands for one-shots, like `eda-summary` or `scaffold-package`; skills for multi-step capabilities, like Block 3's `fits-to-zarr`; MCP servers if they want to add new tools).
 
 ## What's in this folder
 
