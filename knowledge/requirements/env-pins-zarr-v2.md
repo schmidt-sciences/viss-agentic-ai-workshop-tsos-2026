@@ -3,7 +3,7 @@ type: Requirement
 title: Environment pins for astrowidget (zarr v2)
 description: "Block 3 pins: ovro-lwa-portal from git @809aaf4, astrowidget 0.2.0, zarr>=2.18.7,<3 (xarray resolves to 2025.12), Python 3.12 via .python-version, requires-python <3.14; lock written with uv 0.6.14."
 tags: [dependencies, uv, zarr, xarray, python-version]
-generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-15T18:17:55Z" }
+generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-19T04:09:42Z" }
 status: stable
 governance: constraint
 code_refs: [pyproject.toml, uv.lock]
@@ -39,7 +39,7 @@ ovro-lwa-portal = { git = "https://github.com/ovro-lwa/ovro-lwa-portal", rev = "
 xradio only declares python-casacore on non-darwin platforms and there is no
 macOS wheel, so the converter cannot run in a plain `uv sync` on macOS. For
 local work on a Mac use a conda-forge env (`python-casacore` is on
-conda-forge for osx-arm64) or the hub. The hub and Codespaces are Linux.
+conda-forge for osx-arm64) or the hub. The hub and the fallback devcontainer are Linux.
 
 ## Sources
 

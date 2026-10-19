@@ -3,7 +3,7 @@ type: Fact
 title: "How the workshop material evolved, and why"
 description: "Past content decisions: Copilot Chat as the only harness, rse-plugins submodule rejected, Block 3 rewritten as an in-repo skills loop, instructor notes removed."
 tags: [history, block-3, copilot, skills]
-generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-15T17:39:35Z" }
+generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-19T04:09:42Z" }
 status: stable
 ---
 
@@ -29,6 +29,16 @@ status: stable
   (1d3a576). Use `LITELLM_BASE_URL` (not `LITELLM_API_BASE`).
 - Block 1's notebook ships unexecuted on purpose; the Dockerfile sets no
   WORKDIR because the mount path differs per fork.
+
+## Superseded
+
+- One harness (Copilot Chat): superseded for the Florence event by Claude
+  Code and JupyterAI on the hub; Copilot wiring removed 2026-10-16. See
+  [delivery-on-jupyterhub](../decisions/delivery-on-jupyterhub.md).
+- Block 3 skills loop on HCI data: replaced by the FITS-to-Zarr example; the
+  HCI demo, its five statistical-loop skills and the stats reference were
+  deleted on 2026-10-18 (Anshul Tambay). See
+  [block3-fits-to-zarr-example](../decisions/block3-fits-to-zarr-example.md).
 
 ## Sources
 

@@ -1,9 +1,9 @@
 ---
 type: Architecture
 title: LLMoxie gateway as used by the workshop
-description: "Participants reach models through SSEC's LLMoxie LiteLLM gateway: one key, many models, per-user budgets, auth by GitHub team; live demos should have a fallback."
+description: "Participants reach models through SSEC's LLMoxie LiteLLM gateway: one key, many models, per-user budgets, keys tied to the hub login (earlier, a GitHub team); live demos should have a fallback."
 tags: [llmoxie, litellm, gateway, models]
-generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-15T17:39:37Z" }
+generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-19T04:09:42Z" }
 status: stable
 code_refs: [.devcontainer/devcontainer.json]
 ---
@@ -11,9 +11,9 @@ code_refs: [.devcontainer/devcontainer.json]
 ## Shape
 
 - Layers: cloud inference (Azure AI Foundry, AWS Bedrock, open models), a
-  LiteLLM proxy with MLflow tracing, harnesses (Copilot Chat via the
-  OAI-compatible extension in Codespaces; JupyterAI and Claude Code on the
-  hub), and context engineering (skills/plugins).
+  LiteLLM proxy with MLflow tracing, harnesses (JupyterAI and Claude Code on the
+  hub; earlier, Copilot Chat via the OAI-compatible extension in
+  Codespaces), and context engineering (skills/plugins).
 - One API key per participant works across models, with per-user daily
   budgets and an event-wide ceiling; keys are tied to a GitHub team or the hub
   login.
