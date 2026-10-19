@@ -1,9 +1,9 @@
 ---
 type: Fact
 title: Stale text to fix for the observatory event
-description: "Earlier-delivery leftovers (ISS/Codespaces text, the HCI demo, the Discussions link, old contacts) were fixed by 2026-10-18; the pyproject name is kept as is."
+description: "Earlier-delivery leftovers (ISS/Codespaces text, the HCI demo, old contacts) were fixed by 2026-10-18; the pyproject name is kept as is."
 tags: [todo, docs, cleanup]
-generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-19T04:43:05Z" }
+generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-19T05:29:01Z" }
 status: stable
 code_refs: [docs/workshop-outline.md, .github/ISSUE_TEMPLATE/config.yml, pyproject.toml]
 ---
@@ -35,8 +35,8 @@ code_refs: [docs/workshop-outline.md, .github/ISSUE_TEMPLATE/config.yml, pyproje
   keeps Copilot copies of the gallery, the pre-block checklist says
   "JupyterHub terminal", and the devcontainer comment no longer mentions
   Codespaces.
-- `.github/ISSUE_TEMPLATE/config.yml` no longer links GitHub Discussions
-  (disabled on this repo).
+- Discussions were enabled on the repo, so the issue template's
+  Discussions link is valid again.
 - The Contact section of `docs/workshop-outline.md` lists only Anshul Tambay
   (Tina Dang removed at Anshul Tambay's request).
 
