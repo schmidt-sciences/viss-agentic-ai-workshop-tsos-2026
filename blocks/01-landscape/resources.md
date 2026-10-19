@@ -8,7 +8,7 @@ tool announcement.
 - **Anthropic: [Building effective agents](https://www.anthropic.com/research/building-effective-agents)**: the cleanest explanation of agent loops, tools, and when *not* to use an agent. The vocabulary in our "anatomy of a coding agent" slide comes mostly from here.
 - **OpenAI: [Function calling](https://platform.openai.com/docs/guides/function-calling)**: the tool-calling spec that LiteLLM (and the notebook) use. Even when the model is Claude, the wire format is OpenAI's.
 - **LiteLLM: [Documentation](https://docs.litellm.ai/)**: the proxy and Python SDK we use. Most useful sections: "completion" (the function we call), "supported providers" (the model aliases you can swap into `MODEL`), and "proxy server" (how we set ours up).
-- **Model Context Protocol: [Specification](https://modelcontextprotocol.io/)**: the open standard for plugging tools into agents. We'll build an MCP server in Block 4.
+- **Model Context Protocol: [Specification](https://modelcontextprotocol.io/)**: the open standard for plugging tools into agents. Block 4 shows where MCP servers fit next to skills, commands, and rules.
 
 ## The products we mentioned
 

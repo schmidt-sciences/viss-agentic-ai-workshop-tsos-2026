@@ -12,7 +12,7 @@
 section {
 	/* Canvas height is tuned to the SINGLE densest slide in the whole workshop
      (Block 2, "Tool-use FT: a full multi-turn trajectory": heading + intro +
-     ~30-line code block + closing). 1200px fits it with minimal top/bottom band
+     ~30-line code block + closing). 900px fits it with minimal top/bottom band
      while top-aligned. NOTE: deliberately not 16:9, so it may letterbox on a
      projector. Do NOT add a `size:` directive in the frontmatter or it will
      override these dimensions. If a slide ever clips at the bottom, bump height

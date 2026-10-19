@@ -3,7 +3,7 @@ set -euo pipefail
 
 # --- Output styling -------------------------------------------------------
 # Colors are emitted unconditionally (not gated on a tty) because the
-# devcontainer / Codespaces "creating container" log renders ANSI codes.
+# devcontainer "creating container" log renders ANSI codes.
 GREEN="\033[0;32m"
 YELLOW="\033[0;33m"
 RED="\033[0;31m"

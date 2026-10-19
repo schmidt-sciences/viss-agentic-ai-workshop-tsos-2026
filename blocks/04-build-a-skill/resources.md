@@ -16,7 +16,7 @@ else is "going further."
 
 ## The same idea in other tools
 
-- **GitHub Copilot: [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents), [prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files), [agent skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills), and [custom instructions](https://docs.github.com/en/copilot/customizing-copilot/about-customizing-github-copilot-chat-responses)**: the same four primitives in VS Code. This repo keeps Copilot versions of every gallery file in `.github/agents/`, `.github/prompts/`, `.github/skills/`, and `.github/instructions/`; diff them against `.claude/` to see how little changes between tools.
+- **GitHub Copilot: [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents), [prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files), [agent skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills), and [custom instructions](https://docs.github.com/en/copilot/customizing-copilot/about-customizing-github-copilot-chat-responses)**: the same four primitives in GitHub Copilot, for comparison.
 - **Cursor: [Custom rules and modes](https://docs.cursor.com/)**: for participants who use Cursor day-to-day.
 - **Aider: [Conventions and prompts](https://aider.chat/docs/usage/conventions.html)**: the OSS alternative; same patterns, smaller surface area.
 
