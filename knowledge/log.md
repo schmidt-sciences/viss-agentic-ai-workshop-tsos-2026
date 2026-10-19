@@ -1,3 +1,15 @@
+## 2026-10-19
+* **Update**: Updated concept `facts/stale-event-references.md`.
+* **Update**: Updated concept `facts/stale-event-references.md`.
+* **Update**: Updated concept `facts/stale-event-references.md`.
+* **Update**: Updated concept `decisions/block3-fits-to-zarr-example.md`.
+* **Update**: Updated concept `requirements/env-pins-zarr-v2.md`.
+* **Update**: Updated concept `architecture/llmoxie-gateway.md`.
+* **Update**: Updated concept `facts/connected-projects.md`.
+* **Update**: Updated concept `facts/content-evolution.md`.
+* **Update**: Updated concept `facts/stale-event-references.md`.
+* **Update**: Updated concept `decisions/block3-fits-to-zarr-example.md`.
+
 ## 2026-10-17
 * **Update**: Updated concept `facts/stale-event-references.md`.
 * **Update**: Updated concept `facts/workshop-roles.md`.

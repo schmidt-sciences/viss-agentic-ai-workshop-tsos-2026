@@ -3,7 +3,7 @@ type: Decision
 title: "Block 3 example: agent-driven FITS to Zarr, verified, then used for moment 0"
 description: "Block 3 converts a forward-modeled DSA FITS cube to Zarr with an agent and the fits-to-zarr skill, verifies it, then makes a moment-0 map and spectrum shown in astrowidget over DSS."
 tags: [block-3, fits, zarr, astrowidget, curriculum]
-generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-15T22:16:18Z" }
+generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-19T04:13:03Z" }
 status: stable
 code_refs: ["blocks/03-research-loop/**"]
 ---
@@ -54,6 +54,21 @@ code_refs: ["blocks/03-research-loop/**"]
   prompt: have the agent estimate the HI mass and check its constants.
 - Flow is unchanged: profile, convert with the skill, verify, then use.
 
+## HCI demo removed (2026-10-18)
+
+- Anshul Tambay: the tutorial now uses only the FITS example, so the
+  remnants of the previous Block 3 example were removed rather than kept as
+  a Block 4 target.
+- Deleted: `blocks/03-research-loop/demo-hci/` (the HCI text-entry study),
+  the five statistical-loop skills (plan-analysis, explore-data,
+  statistical-tests, draft-report, validate-analysis) and their
+  `.agents/skills/` links, `docs/statistical-tests-reference.md`, and the
+  `research-data-scientist` subagent that orchestrated them.
+- `.github/skills/` now holds fits-to-zarr, profile-dataset and handoff.
+  `profile-dataset` and `handoff` no longer point the agent at the deleted
+  skills. Block 4 targets are now `sci_units`, the FITS cube, or the
+  participant's own code.
+
 ## Alternatives considered
 
 - Keep the HCI example: rejected for a domain-specific audience.
@@ -67,6 +82,7 @@ code_refs: ["blocks/03-research-loop/**"]
 
 Granola meetings 2026-09-11, 2026-09-18, 2026-10-06, 2026-10-08,
 2026-10-13, 2026-10-14.
+Anshul Tambay, 2026-10-18 (repo cleanup on branch `cleanup-stale-content`).
 
 # Related Concepts
 - [How the workshop material evolved, and why](../facts/content-evolution.md): replaces the HCI skills loop in Block 3

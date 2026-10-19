@@ -1,23 +1,18 @@
 ---
 type: Fact
 title: Stale text to fix for the observatory event
-description: Several files still describe the ISS/Codespaces delivery and must be updated for the Florence JupyterHub event.
+description: "Earlier-delivery leftovers (ISS/Codespaces text, the HCI demo, old contacts) were fixed by 2026-10-18; the pyproject name is kept as is."
 tags: [todo, docs, cleanup]
-generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-17T01:29:12Z" }
+generated: { by: "claude-code:claude-opus-5-5", at: "2026-10-19T05:29:01Z" }
 status: stable
 code_refs: [docs/workshop-outline.md, .github/ISSUE_TEMPLATE/config.yml, pyproject.toml]
 ---
 
-## Known stale references (as of 2026-10-15)
+## Known stale references (as of 2026-10-18)
 
-- `docs/workshop-outline.md` still names the Interdisciplinary Science
-  Summit in Raleigh, the schmidt-sciences team link and old contacts.
-- `.github/ISSUE_TEMPLATE/config.yml` links GitHub Discussions, but Issues
-  and Discussions are disabled on this repo.
 - `pyproject.toml` project name is `coding-with-agents-workshop`; only
-  `pixi.toml` uses `viss-observatory-workshop-2026`.
-- The Contact section of `docs/workshop-outline.md` still lists the earlier
-  delivery's contacts; the instructor list was updated on 2026-10-16.
+  `pixi.toml` uses `viss-observatory-workshop-2026`. A rename was scrapped
+  on 2026-10-18 (Anshul Tambay), so the name stays as is for now.
 
 ## Fixed (2026-10-16)
 
@@ -26,10 +21,28 @@ code_refs: [docs/workshop-outline.md, .github/ISSUE_TEMPLATE/config.yml, pyproje
   Claude Code on the JupyterHub, and the outline's event, prerequisites and
   Block 3 description were updated. Copilot still appears where it is
   compared with other tools (Block 1 landscape, audience Q&A, resources).
+- The outline no longer names the ISS/Raleigh event or the schmidt-sciences
+  team link.
+
+## Fixed (2026-10-18)
+
+- The HCI text-entry demo, its five statistical-loop skills, the stats
+  reference doc and the `research-data-scientist` subagent were removed, and
+  every reference to them updated (see
+  [the Block 3 decision](../decisions/block3-fits-to-zarr-example.md)).
+- Remaining participant-facing Copilot/VS Code/Codespaces leftovers were
+  fixed: Block 4 resources and the audience Q&A no longer claim the repo
+  keeps Copilot copies of the gallery, the pre-block checklist says
+  "JupyterHub terminal", and the devcontainer comment no longer mentions
+  Codespaces.
+- Discussions were enabled on the repo, so the issue template's
+  Discussions link is valid again.
+- The Contact section of `docs/workshop-outline.md` lists only Anshul Tambay
+  (Tina Dang removed at Anshul Tambay's request).
 
 ## Sources
 
-Repo inspection and repo-history research, 2026-10-15.
+Repo inspection and repo-history research, 2026-10-15; Anshul Tambay, 2026-10-18 (repo cleanup on branch `cleanup-stale-content`).
 
 # Related Concepts
 - [Repository lineage and past deliveries](repo-lineage.md): leftovers from earlier deliveries
