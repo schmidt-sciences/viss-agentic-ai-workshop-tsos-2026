@@ -1,6 +1,6 @@
 """The agent loop, sandbox, tool handlers, and tool schemas.
 
-Mirrors Block 1's `notebook.ipynb` so Blocks 2-4 can reuse the loop
+Mirrors Block 1's `notebook.ipynb` so Block 2 can reuse the loop
 without re-pasting it. See the notebook for the line-by-line walkthrough.
 """
 

@@ -58,4 +58,3 @@ Cordero Core, Anshul Tambay, Don Setiawan, Vani Mandava
 ## Contact
 
 - **Anshul Tambay**, University of Washington Scientific Software Engineering Center, [anshul37@uw.edu](mailto:anshul37@uw.edu)
-- **Tina Dang**, Schmidt Sciences, [tdang@schmidtsciences.org](mailto:tdang@schmidtsciences.org)

@@ -54,7 +54,7 @@ This is a **live, instructor-led demo**, followed along in
 
 If anything goes wrong on the day, the [`expected-artifacts/`](demo/expected-artifacts/)
 folder ships pre-generated outputs (profile, conversion record, verification
-report, and a channel image) to walk through instead.
+report, and the moment-0/channel-map and spectrum figures) to walk through instead.
 
 ## Bridge to Block 4
 

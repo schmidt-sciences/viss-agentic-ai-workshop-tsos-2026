@@ -17,11 +17,11 @@ field, we want resources that build the **mental model** Block 2 set up.
 
 ## Tool use and agentic RL
 
-- **Anthropic, [Tool use overview](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview)**. The wire format the notebook used.
+- **Anthropic, [Tool use overview](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview)**. Anthropic's native tool-use format. The notebook speaks OpenAI format; LiteLLM translates it into this for Claude models.
 - **Anthropic, [Building effective agents](https://www.anthropic.com/research/building-effective-agents)**.
 - **Anthropic, [Software engineering using Claude](https://www.anthropic.com/engineering)** (engineering blog, ongoing). Real-world write-ups of Claude Code's design, the closest thing to "what agentic RL looks like in production" without an academic paper.
 
-## Companion to slide 8 ("trained in vs in the prompt")
+## Companion to the "trained in vs in the prompt" slide
 
 - **Simon Willison, [his blog at large](https://simonwillison.net/)** (pick any recent post). Simon documents case after case where "the model can't do X" turned out to be "I phrased it badly." A good feel for how often the prompt side, the part you control, is worth checking first.
 - **Anthropic, [Claude's character / training methodology](https://www.anthropic.com/news/claude-character)**. Useful for understanding what "training in" personality and helpfulness actually looks like.
