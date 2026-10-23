@@ -88,7 +88,7 @@ Open a terminal, `cd` to the repo root, and run `claude`. Then:
 ## Repo conventions
 
 - One folder per block, reusable layout.
-- All Python work goes through `uv` (`uv run pytest`, `uv add <pkg>`, etc.).
+- All Python work goes through `uv` (`uv run pytest`, `uv add <pkg>`, etc.) locally; on the hub, use the image's `python`.
 - Notebooks are written to be read top-to-bottom as a teaching document, not just executed.
 - Slides are Marp markdown. Instructors preview and present them with the **Marp for VS Code** extension (the theme is registered in `.vscode/settings.json`).
 

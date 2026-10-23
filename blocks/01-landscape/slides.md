@@ -117,7 +117,7 @@ When you use an agent, **your code, data, and prompts leave your machine** and g
 
 ## Demo: same task, two ways
 
-**The scenario**: a tiny `sci_units` Python package for temperature unit conversions with failing tests (`uv run pytest -v`).
+**The scenario**: a tiny `sci_units` Python package for temperature unit conversions with failing tests (`python -m pytest -v`).
 
 We are going to fix it twice.
 
