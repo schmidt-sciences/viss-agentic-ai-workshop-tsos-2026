@@ -98,8 +98,8 @@ Report: [verify-<slug>.md](verify-<slug>.md)
 
 ## Constraints
 
-- Run the scripts with the project's Python environment (`uv run python ...`
-  in a uv checkout, plain `python` on the JupyterHub).
+- Run the scripts with plain `python` on the JupyterHub, even though the repo
+  has a `uv.lock`; use `uv run python ...` only in a local uv checkout.
 - If `convert.py` fails, report the error and the header facts from step 2.
   Do not retry with modified scripts.
 - If `verify.py` reports a failure, say which check failed and with what

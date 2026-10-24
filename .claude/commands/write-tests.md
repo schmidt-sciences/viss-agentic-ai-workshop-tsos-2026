@@ -1,7 +1,8 @@
 ---
 description: "Write focused pytest tests for a target function or module."
 argument-hint: "[function or module to test]"
-allowed-tools: Read, Grep, Glob, Edit, Write, Bash(uv run pytest:*)
+allowed-tools:
+  Read, Grep, Glob, Edit, Write, Bash(python -m pytest:*), Bash(uv run pytest:*)
 ---
 
 # Write pytest tests
@@ -26,9 +27,10 @@ tests.
    - **Error behavior**: that bad input raises the documented exception.
 3. Use `pytest` idioms: plain `assert`, `pytest.approx` for floats,
    `pytest.mark.parametrize` for tables of cases, `pytest.raises` for errors.
-4. Run the new tests with `uv run pytest` (this repo uses `uv`). Report
-   pass/fail. If a test fails, decide: is it a bug in the code (flag it, do not
-   silently fix) or a wrong expectation (fix the test)?
+4. Run the new tests with `python -m pytest` on the JupyterHub (`uv run pytest`
+   in a local uv checkout). Report pass/fail. If a test fails, decide: is it a
+   bug in the code (flag it, do not silently fix) or a wrong expectation (fix
+   the test)?
 
 ## Constraints
 
@@ -47,6 +49,6 @@ After writing and running, summarize:
 Added <n> tests in <path>:
 - <test name> — <what it pins down>
 
-Run: uv run pytest <path>  ->  <X passed, Y failed>
+Run: python -m pytest <path>  ->  <X passed, Y failed>
 Bugs found (not fixed): <none | file:line + description>
 ```

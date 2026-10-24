@@ -33,14 +33,17 @@ These apply to every task, in every session:
 
 1. **Two package managers, each with one job.** The workshop's Python
    environment (notebooks, `sci_units`, `workshop_agent`, tests) is managed by
-   **uv**: `uv run <cmd>`, `uv add <pkg>`. Repo tooling (pre-commit, `gh`,
-   `okf`) is managed by **Pixi**: run `pixi install` before any other Pixi
-   command. Never invoke `pip`, `conda`, or `venv` directly, and never add
-   workshop runtime dependencies to `pixi.toml`. See
+   **uv**: `uv run <cmd>`, `uv add <pkg>`. On the event JupyterHub there is no
+   uv: the image's Python is the environment, so use `python` and
+   `python -m pytest` there. Repo tooling (pre-commit, `gh`, `okf`) is managed
+   by **Pixi**: run `pixi install` before any other Pixi command. Never invoke
+   `pip`, `conda`, or `venv` directly, and never add workshop runtime
+   dependencies to `pixi.toml`. See
    [pixi-environments.md](.agents/rules/pixi-environments.md).
 2. **Verify before you claim.** Never report work as complete, fixed, or passing
    without having run the check and read its output. The minimum gate here is
-   `pixi run pre-commit-all`; when Python code changed, also `uv run pytest`.
+   `pixi run pre-commit-all`; when Python code changed, also `uv run pytest`
+   (`python -m pytest` on the hub).
 3. **Change surgically.** Every changed line must trace directly to the request.
    Don't refactor, reformat, or "improve" adjacent code you weren't asked to
    touch.

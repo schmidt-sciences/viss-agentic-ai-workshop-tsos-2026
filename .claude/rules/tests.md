@@ -12,7 +12,8 @@ them when it reads or edits a matching file, with no action from you.
 When writing or editing tests in this project:
 
 - Use **`pytest`**, not `unittest`. Plain `assert`; no `self.assertEqual`.
-- Run tests with **`uv run pytest`** (this repo is `uv`-managed).
+- Run tests with **`python -m pytest`** on the JupyterHub, or
+  **`uv run pytest`** in a local uv checkout.
 - Compare floats with **`pytest.approx`**, never exact `==`.
 - Use **`pytest.mark.parametrize`** for tables of known-answer cases instead of
   copy-pasted test bodies.

@@ -4,7 +4,7 @@ argument-hint: '[TODO: what the user passes, e.g. path to a .csv]'
 allowed-tools: Read, Grep, Glob
 # allowed-tools lists tools the command may use WITHOUT asking permission.
 # Add Edit, Write if the command should modify code.
-# Add a scoped Bash entry, e.g. Bash(uv run pytest:*), if it should run a command.
+# Add a scoped Bash entry, e.g. Bash(python -m pytest:*), if it should run a command.
 ---
 
 # TODO: command title
