@@ -1,17 +1,17 @@
 ---
 name: profile-dataset
-description: 'Document a dataset and its study design exactly as they are — shape, columns, dtypes, ranges, missingness, and the stated hypothesis — and write the findings to docs/. Use when someone hands you a dataset (a CSV/TSV/parquet + maybe an AGENTS.md) and wants to understand what they are working with before any analysis. Phase 1 of the analysis workflow.'
+description: 'Document a dataset and its study design exactly as they are — shape, columns, dtypes, ranges, missingness, and the stated hypothesis — and write the findings to docs/. Use when someone hands you a dataset (a CSV/TSV/parquet, or a folder of FITS images, + maybe an AGENTS.md) and wants to understand what they are working with before any analysis. Phase 1 of the analysis workflow.'
 argument-hint: '[dataset path] (defaults to the open file)'
 ---
 
 # Profile dataset (phase 1 of the analysis workflow)
 
 Build context for an analysis by **documenting the data as it exists today**. This
-is the first phase of the durable profile → plan → explore → test → draft →
-validate loop.
+is the first phase of the workflow; for FITS images, the next phase is
+`fits-to-zarr`.
 
-The dataset to profile: the CSV/TSV/parquet the user points you at (or the open
-file). Read `AGENTS.md` first if one is present — it carries the study design and
+The dataset to profile: the CSV/TSV/parquet file or folder of FITS images the
+user points you at (or the open file). Read `AGENTS.md` first if one is present — it carries the study design and
 conventions.
 
 ## Artifacts directory
@@ -32,7 +32,11 @@ Your only job is to **document and describe** the dataset and its study design.
 ## Steps
 
 1. **Read `AGENTS.md` first** (if present), then the dataset. For a large file,
-   read the header plus a sample of rows — say so if you sampled.
+   read the header plus a sample of rows — say so if you sampled. For a **folder
+   of FITS images**, profile the headers instead of rows: file count and naming,
+   image size, WCS axes (`CTYPE*`, `CRVAL*`, `CDELT*`), frame (`RADESYS`,
+   `EQUINOX`), frequency and time keywords, `BUNIT`, beam, and which values vary
+   across files (`astropy.io.fits.getheader`; no need to load pixel data).
 2. **Describe the shape and structure:** rows × columns; is it wide or long/tidy;
    what is the unit of observation (one row = one what?).
 3. **Describe each column:** name, inferred dtype, meaning (from `AGENTS.md` or the
@@ -42,7 +46,7 @@ Your only job is to **document and describe** the dataset and its study design.
    grouping keys, the stated outcome(s), missingness, suspicious sentinels.
 5. **Write the artifact** to `docs/profile-<slug>.md` (create `docs/` if
    needed; `<slug>` from the dataset/study, lowercase-hyphenated).
-6. **Present** a short summary in chat and offer to move to `plan-analysis`.
+6. **Present** a short summary in chat and offer the next step (for FITS images, `fits-to-zarr`).
 
 ## Artifact structure (`docs/profile-<slug>.md`)
 
@@ -81,4 +85,4 @@ quote the source; do not infer a test>
 - Keep the artifact self-contained: a reader should understand the dataset from it
   alone.
 
-Next phase: hand this to `plan-analysis`.
+Next phase: for FITS images, hand this to `fits-to-zarr`.

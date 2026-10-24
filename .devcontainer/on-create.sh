@@ -3,7 +3,7 @@ set -euo pipefail
 
 # --- Output styling -------------------------------------------------------
 # Colors are emitted unconditionally (not gated on a tty) because the
-# devcontainer / Codespaces "creating container" log renders ANSI codes.
+# devcontainer "creating container" log renders ANSI codes.
 GREEN="\033[0;32m"
 YELLOW="\033[0;33m"
 RED="\033[0;31m"
@@ -71,8 +71,7 @@ PY
 
 say 5 "Configuring shell auto-activation of .venv"
 # Auto-activate the uv-managed virtualenv in every interactive shell so Python
-# is the active interpreter for VS Code terminals and Copilot Chat — not just on
-# PATH.
+# is the active interpreter for VS Code terminals — not just on PATH.
 BASHRC="${HOME}/.bashrc"
 HOOK_MARKER='# >>> uv venv activation >>>'
 if ! grep -qF "${HOOK_MARKER}" "${BASHRC}" 2>/dev/null; then

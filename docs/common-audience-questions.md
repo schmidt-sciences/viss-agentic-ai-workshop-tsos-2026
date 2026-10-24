@@ -20,7 +20,7 @@ the framing from the slides so you can answer without flipping back.
 | What's the difference between `AGENTS.md`, `copilot-instructions.md`, and `.cursor/rules`? | Same concept, **project memory** loaded into the system prompt, just a different filename per tool. It's where you put conventions every chat should know. |
 | Where does my code and data go when I use an agent? | To whoever hosts the model. Always ask: who hosts it, is the data governed (human subjects, PII, IRB, HIPAA), is it licensed or proprietary, and is it logged or trained on? Enterprise and proxy tiers usually don't retain or train; consumer tiers often do. |
 | Can I use an agent on sensitive or restricted data? | Match the **model hosting** to the **sensitivity of the data**. When in doubt, don't send it as context. A redacted snippet or a synthetic sample is often enough for the agent to help. The workshop's LLM proxy is deliberate: it keeps requests inside a controlled gateway rather than a consumer endpoint. |
-| Do I need a paid Copilot subscription to follow along? | Not here. The Codespace ships a custom OAI-compatible Copilot extension pointed at the workshop's gateway, so you pick the workshop's models in the picker with no subscription. |
+| Do I need a paid subscription (Claude, Copilot) to follow along? | Not here. Your JupyterHub login comes with a key for the workshop's gateway, so `claude` and the notebooks use the workshop's models with no subscription of your own. |
 
 ---
 
@@ -47,17 +47,17 @@ the framing from the slides so you can answer without flipping back.
 
 | Question | Short answer |
 |---|---|
-| Where do these skills come from? | They're seven markdown files in `.github/skills/`: `profile-dataset/SKILL.md`, `plan-analysis/SKILL.md`, and so on. Each is frontmatter (name, description, tools) plus a templated prompt. We ship them in-repo so the whole workshop stays in one tool. |
-| Do I invoke a skill by name, or does the agent pick it? | Both. The `description`'s `Use when…` clause is what the agent matches a generic ask against. Naming the skill (`/plan-analysis`) is just the explicit version, handy for a live demo. |
-| Do I have to run all seven skills every time? | No, pick the pattern. Full study: profile → plan → explore → test → draft → validate. Already know the data: plan → test. Quick look: just `explore-data`, or chat against `AGENTS.md`. |
-| Did the agent pick the right statistical test? | That's the whole point of `plan-analysis` + `validate-analysis`. The demo's design is within-subjects, so the answer is a repeated-measures or Friedman family. An independent t-test or one-way ANOVA is the trap, and `validate-analysis` is what catches it. |
-| Can the agent's plan just be wrong? | Often. Hand-edit the plan (it's plain markdown) or re-run `plan-analysis`. And `validate-analysis` is non-optional for anything you'd put in a paper. |
+| Where do these skills come from? | They're three markdown files in `.github/skills/`: `profile-dataset/SKILL.md`, `fits-to-zarr/SKILL.md`, and `handoff/SKILL.md`. Each is frontmatter (name, description) plus a templated prompt; `fits-to-zarr` also bundles its `convert.py` and `verify.py` scripts. We ship them in-repo so the whole workshop stays in one tool. |
+| Do I invoke a skill by name, or does the agent pick it? | Both. The `description`'s `Use when…` clause is what the agent matches a generic ask against. Naming the skill (`/fits-to-zarr`) is just the explicit version, handy for a live demo. |
+| Do I have to run all three skills every time? | No. `profile-dataset` is optional once you know the headers, and `handoff` is only for long sessions. `fits-to-zarr` does the work, and its verify step is not optional. |
+| Did the agent convert the cube correctly? | Don't trust the 'Done!'. `verify.py` checks the Zarr against the original FITS: inventory, frequencies, times, every pixel, WCS/sky coordinates, beam. A transposed axis or a shifted sky position is the trap, and the verify step is what catches it. |
+| Can the agent just be wrong? | Often. That's why `fits-to-zarr` does the conversion with fixed scripts instead of letting the agent hand-write a converter, and why it isn't done until `verify.py` passes. Read the verify report, not just the verdict. |
 | How do I carry context across a long session? | Run the `handoff` skill. It writes a self-contained markdown doc to `docs/`, then you start a fresh chat pointed at that file. That's the context-compaction lever from the failure-mode slide. |
-| What goes in `AGENTS.md`? | Your research context: study design ('this is within-subjects'), stats conventions ('alpha = .05', 'always report effect size'), 'never invent citations', file-format conventions, pipeline DAGs. It's the one file you'll edit most, and it's portable across tools. |
-| What's the difference between fast and durable mode? | Same agents, same skills, different dial. Fast = exploratory spikes, chat against `AGENTS.md`, throwaway. Durable = an analysis headed for a paper, all phases, `validate-analysis` non-negotiable. Pick the loop length to match the half-life of the result. |
+| What goes in `AGENTS.md`? | Your research context: where the data lives and where outputs go, instrument and frame conventions ('frequencies in Hz', 'ICRS'), 'never invent citations', file-format conventions, pipeline DAGs. It's the one file you'll edit most, and it's portable across tools. |
+| What's the difference between fast and durable mode? | Same agents, same skills, different dial. Fast = exploratory spikes, chat against `AGENTS.md`, throwaway. Durable = an analysis headed for a paper, all phases, verification non-negotiable. Pick the loop length to match the half-life of the result. |
 | What is prompt injection, and should I worry about it for research? | The agent follows instructions in *everything* it reads and can't fully separate yours from instructions buried in content (a README, a web page, even a CSV header). Mitigate with read-only skills for untrusted data, no auto-approve on edits or shell, and treating agent output as untrusted until you've read it. |
 | How do I stay in control of an agent that edits my files? | git is your safety net. Commit before you start, read the diff (not the 'Done!' chat) to see exactly what changed, commit the `docs/` artifacts alongside the code, and commit per phase so a bad later phase rolls back cleanly. `git log docs/` becomes an auditable lab notebook. |
-| Could I run this same workflow in Claude Code or Cursor? | Yes. The *pattern* (named skills, markdown artifacts in `docs/`) is portable; the file format differs per tool. We keep everything in Copilot Chat here for consistency. |
+| Could I run this same workflow in Copilot or Cursor? | Yes. The *pattern* (named skills, markdown artifacts in `docs/`) is portable; the file format differs per tool. We keep everything in Claude Code here for consistency. |
 
 ---
 
@@ -65,13 +65,13 @@ the framing from the slides so you can answer without flipping back.
 
 | Question | Short answer |
 |---|---|
-| What's the difference between a custom agent and a prompt file? | Custom agent = persistent persona for the whole conversation, picked from the agent dropdown. Prompt file = one-shot `/slash` command. Use prompt files for repeated quick actions, agents for sustained tasks. |
-| What's a skill, then? | A skill is a folder (`.github/skills/<name>/SKILL.md`) that can bundle scripts and resources, loaded on demand. Use it for a multi-step capability, not a single prompt. See the Block 3 research-loop skills. |
-| Which primitive should I reach for? | Pick the smallest one that does the job, usually a prompt file or a skill, not a whole agent. They compose: an agent (`research-data-scientist`) can drive the seven skills in order. |
-| Can I have multiple agents active at once? | One at a time per chat. But you can switch mid-conversation, and agents can hand off to each other. |
-| Does the agent use the LiteLLM proxy? | Yes. Copilot uses the same env vars regardless of agent. The model you see in the picker comes from your Copilot settings. |
-| Can I use this with another tool (Cursor, Claude Code)? | Yes. They have their own equivalents (Cursor rules and modes, Claude Code skills). The pattern transfers; the file format differs slightly. We keep the whole workshop in Copilot Chat for consistency. |
-| Where do I save the agent to use it on my own repo? | Same place: `.github/agents/<name>.agent.md` in that repo. The file is portable; commit it and your collaborators get it too. |
-| How do I test an agent without running a real query? | You can't, really. The iteration loop is: edit prompt → reload → run → observe → edit. Same as prompt engineering anywhere. |
-| My agent doesn't appear in the picker. What's wrong? | Check the filename is `*.agent.md` in `.github/agents/`, then run **Developer: Reload Window**. If it loads but errors, it's usually a YAML frontmatter problem: missing quotes around the description or a malformed `tools` list. |
+| What's the difference between a subagent and a slash command? | Subagent = focused persona with its own tool list and context; Claude hands it a task and gets a report back. Slash command = one-shot `/name` prompt you fire yourself. Use commands for repeated quick actions, agents for focused delegated tasks. |
+| What's a skill, then? | A skill is a folder (`.claude/skills/<name>/SKILL.md`) that can bundle scripts and resources, loaded on demand. Use it for a multi-step capability, not a single prompt. See the Block 3 skills (`fits-to-zarr` bundles two scripts). |
+| Which primitive should I reach for? | Pick the smallest one that does the job, usually a command or a skill, not a whole agent. They compose: a slash command can chain subagents, and a skill can bundle scripts (`fits-to-zarr` runs `convert.py`, then `verify.py`). |
+| Can I have multiple agents active at once? | Yes. The main session can delegate to several subagents, even in parallel, and each reports back. To make one agent the whole session, start with `claude --agent <name>`. |
+| Does the agent use the LiteLLM proxy? | Yes. Subagents run inside the same Claude Code session, so they use the same backend. A subagent can pin a different model with the `model` field. |
+| Can I use this with another tool (Copilot, Cursor)? | Yes. They have their own equivalents (Copilot custom agents and prompt files, Cursor rules and modes). The pattern transfers; the file format differs slightly. |
+| Where do I save the agent to use it on my own repo? | Same place: `.claude/agents/<name>.md` in that repo. The file is portable; commit it and your collaborators get it too. For an agent you want in every project, use `~/.claude/agents/`. |
+| How do I test an agent without running a real query? | You can't, really. The iteration loop is: edit prompt → run → observe → edit. Same as prompt engineering anywhere. |
+| My agent doesn't show up after `@`. What's wrong? | Check the file is `*.md` in `.claude/agents/` and that `claude` was started from the repo root; if so, `/exit` and restart `claude`. If it loads but errors, it's usually a YAML frontmatter problem: missing quotes around the description or a missing `name`. |
 | My agent runs but does the wrong thing. | Almost always the system-prompt steps are too vague. Tighten step 1, add a 'What you do NOT do' constraint, and if it loops, add 'After at most 5 tool calls, summarize and stop.' |

@@ -1,7 +1,7 @@
 [project]
 name = "workshop-agent"
 version = "0.1.0"
-description = "The agent loop, tools, and tool schemas extracted from Block 1's notebook so Blocks 2-4 can reuse them."
+description = "The agent loop, tools, and tool schemas extracted from Block 1's notebook so Block 2 can reuse them."
 requires-python = ">=3.12"
 dependencies = []
 

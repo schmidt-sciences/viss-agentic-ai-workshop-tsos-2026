@@ -8,17 +8,18 @@ tool announcement.
 - **Anthropic: [Building effective agents](https://www.anthropic.com/research/building-effective-agents)**: the cleanest explanation of agent loops, tools, and when *not* to use an agent. The vocabulary in our "anatomy of a coding agent" slide comes mostly from here.
 - **OpenAI: [Function calling](https://platform.openai.com/docs/guides/function-calling)**: the tool-calling spec that LiteLLM (and the notebook) use. Even when the model is Claude, the wire format is OpenAI's.
 - **LiteLLM: [Documentation](https://docs.litellm.ai/)**: the proxy and Python SDK we use. Most useful sections: "completion" (the function we call), "supported providers" (the model aliases you can swap into `MODEL`), and "proxy server" (how we set ours up).
-- **Model Context Protocol: [Specification](https://modelcontextprotocol.io/)**: the open standard for plugging tools into agents. We'll build an MCP server in Block 4.
+- **Model Context Protocol: [Specification](https://modelcontextprotocol.io/)**: the open standard for plugging tools into agents. Block 4 shows where MCP servers fit next to skills, commands, and rules.
 
 ## The products we mentioned
 
-- **GitHub: [Copilot in agent mode](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide)**: the official docs for the tool we used in the live demo.
-- **Anthropic: [Claude Code](https://docs.claude.com/en/docs/claude-code/overview)**: the CLI agent, popular in research labs that have Anthropic API access.
+- **Anthropic: [Claude Code](https://code.claude.com/docs/en/overview)**: the CLI agent we used in the live demo, popular in research labs that have Anthropic API access.
+- **GitHub: [Copilot in agent mode](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide)**: the same loop inside VS Code and JetBrains.
 - **Cursor: [Documentation](https://docs.cursor.com/)**: useful even if you don't use Cursor; their rules and modes docs are well written.
 
 ## Project memory
 
 - **[`AGENTS.md` proposal](https://agents.md/)**: the emerging convention for project-level instructions, supported by Claude Code, OpenCode, and others.
+- **Claude Code: [Memory](https://code.claude.com/docs/en/memory)**: how `CLAUDE.md` (which can import `AGENTS.md`) is loaded into every session.
 - **GitHub: [Custom instructions for Copilot](https://docs.github.com/en/copilot/customizing-copilot/about-customizing-github-copilot-chat-responses)**: `.github/copilot-instructions.md` and prompt files, the Copilot equivalent.
 
 ## When agents fail

@@ -24,5 +24,6 @@ working in this repo should read it first.
 
 ```bash
 # from blocks/01-landscape/demo/starter/
-uv run pytest -v
+python -m pytest -v   # on the workshop JupyterHub
+uv run pytest -v      # in a local uv checkout
 ```

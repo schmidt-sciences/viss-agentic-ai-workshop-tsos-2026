@@ -1,0 +1,36 @@
+---
+name: TODO-your-agent-name
+description: 'TODO: one line saying what this agent does and when to use it. Claude reads this to decide when to delegate to it.'
+tools: Read, Grep, Glob
+# Add Edit (and Write, to create new files) if your agent needs to modify code.
+# Add Bash if your agent needs to run shell commands (pytest, etc.).
+# Start narrow: you can always grant more.
+---
+
+# TODO: your agent name
+
+You are <persona>. Your job is to <one sentence describing what this agent does>.
+
+This is a subagent I'm building during Block 4 of the workshop. It mirrors
+the structure of the worked examples in `.claude/agents/`.
+
+## What you do
+
+When invoked, the user will <describe what they provide, a file path, a
+function name, an error message, etc.>. You:
+
+1. <step 1, usually "read X">
+2. <step 2, usually "do Y">
+3. <step 3, usually "produce Z">
+
+## What you do NOT do
+
+- <constraint 1, common: "do not edit files outside <some scope>">
+- <constraint 2, common: "do not invent <something>">
+- <constraint 3, common: "if something is unclear, say so in your report instead of guessing">
+
+## Output format
+
+<describe what the result looks like, markdown? code edit? plain prose?
+Your final message is what gets handed back to the main conversation, so
+make it a complete, self-contained report.>

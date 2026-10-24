@@ -25,8 +25,8 @@ it means *inside that directory*.
 
 1. **Gather git state:** current branch, short commit hash, and a summary of
    uncommitted changes (`git status`, `git diff --stat`).
-2. **Find workflow artifacts** in `docs/` (`profile-*`, `analysis-plan-*`,
-   `explore-*`, `test-*`, `draft-*`, `validate-*`, prior `handoff-*`).
+2. **Find workflow artifacts** in `docs/` (`profile-*`, `convert-*`,
+   `verify-*`, prior `handoff-*`).
 3. **Review the session:** what was worked on, the current workflow phase, and
    which artifacts were produced or referenced.
 4. **Write** `docs/handoff-YYYY-MM-DD-HH-MM-<slug>.md` using the structure
@@ -46,10 +46,10 @@ Date: <YYYY-MM-DD HH:MM> · Branch: <branch> · Commit: <short hash>
 |---|---|---|
 | <task> | ✅ done / 🔄 in progress / 📋 planned | <note> |
 
-Current workflow phase: Profile | Plan | Explore | Test | Draft | Validate
+Current workflow phase: Profile | Convert | Verify | Use
 
 ## Workflow artifacts
-- [analysis-plan-<slug>.md](analysis-plan-<slug>.md) — <what it is>
+- [convert-<slug>.md](convert-<slug>.md) — <what it is>
 (omit artifact types that don't exist)
 
 ## Critical references
@@ -63,7 +63,7 @@ Current workflow phase: Profile | Plan | Explore | Test | Draft | Validate
 
 ## Next steps
 1. [ ] <specific next action>
-**Recommended next skill:** profile-dataset | plan-analysis | explore-data | statistical-tests | draft-report | validate-analysis
+**Recommended next skill:** profile-dataset | fits-to-zarr
 ```
 
 ## Writing guidelines
